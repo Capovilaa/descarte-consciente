@@ -38,21 +38,21 @@ export default function Home() {
             </div>
 
             {/* div para segunda parte da home */}
-            <div className="w-screen h-screen bg-[url('src/assets/fundo-home.png')] bg-cover opacity-60 flex flex-col items-center justify-center">
+            <div className="w-screen h-screen bg-[url('src/assets/fundo-home.png')] bg-cover flex flex-col items-center justify-center">
 
                 {/* div conteúdo tela 2 home */}
                 <div className="w-[90%] h-96 bg-[#FBFCFA] rounded-[5%]">
                     <div className="h-1/3 w-full flex flex-row items-center justify-evenly">
                         <img src="src\assets\planta.png" className="h-14" />
-                        <h2 className="text-[#334333] w-2/3 text-xl">Faça sua contribução para mundo.</h2>
+                        <h2 className="text-[#334333] w-2/3 text-lg font-semibold">Faça sua contribução para mundo.</h2>
                     </div>
                     <div className="h-1/3 w-full flex flex-row items-center justify-evenly">
                         <img src="src\assets\lixeira-home.png" className="h-14" />
-                        <h2 className="text-[#334333] w-2/3 text-xl">Realize o descarte da forma correta.</h2>
+                        <h2 className="text-[#334333] w-2/3 text-lg font-semibold">Realize o descarte da forma correta.</h2>
                     </div>
                     <div className="h-1/3 w-full flex flex-row items-center justify-evenly">
                         <img src="src\assets\map-home.png" className="h-14" />
-                        <h2 className="text-[#334333] w-2/3 text-xl">Econtre o ecoponto mais próximo da sua casa.</h2>
+                        <h2 className="text-[#334333] w-2/3 text-lg font-semibold">Econtre o ecoponto mais próximo da sua casa.</h2>
                     </div>
                 </div>
             </div>
@@ -61,16 +61,15 @@ export default function Home() {
             <div className="w-screen h-screen bg-gradient-to-r from-[#215A49] to-[#213A40] flex flex-col">
 
                 {/* div principal h-80% */}
-                <div className="h-[85%] w-full flex items-center justify-center">
+                <div className="h-[90%] w-full flex items-center justify-center">
 
                     {/* div para conteúdo e botão "explorar" */}
                     <div className="w-[90%] h-[70%] rounded-[5%] flex flex-col items-center">
 
                         {/* div apenas para texto */}
                         <div className="w-full h-2/3 flex flex-col">
-                            <h2 className="text-white font-semibold text-2xl">Deseja conhecer melhor o projeto?
-                            </h2>
-                            <p className="text-lg text-white">Exlore as funcionalidades interativas clicando no botão abaixo.</p>
+                            <h2 className="text-white font-semibold text-2xl">Deseja conhecer melhor o projeto?</h2>
+                            <p className="text-lg text-white pt-10">Exlore as funcionalidades interativas clicando no botão abaixo.</p>
                         </div>
 
                         <button className="w-64 h-20 bg-white drop-shadow-lg shadow-2xl rounded-xl">
@@ -81,11 +80,17 @@ export default function Home() {
                 </div>
 
                 {/* div para roda pé h-20% */}
-                <div className="h-[15%] w-full bg-slate-800 flex flex-row items-center justify-between">
-                    <h1 className="text-white font-normal">2023</h1>
-                    <img src="src\assets\unisal.png" alt="" />
+                <div className="h-[10%] w-full bg-slate-800 flex flex-row items-center justify-between">
+                    <div className="flex items-center justify-center w-1/5">
+                        <h1 className="text-white font-normal">2023</h1>
+                    </div>
+                    <div className="flex items-center justify-center w-4/5">
+                        <img src="src\assets\unisal.png" alt="" />
+                    </div>
                 </div>
             </div>
+
+
         </>
     )
 }
