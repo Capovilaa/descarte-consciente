@@ -1,7 +1,9 @@
-import ApresentacaoJogo from './pages/apresentacaoJogo'
-import Home from './pages/home'
-import Menu from './pages/menu'
-import Reciclagem from './pages/raciclagem'
+import ApresentacaoJogo from "./pages/apresentacaoJogo";
+import Home from "./pages/home";
+import Menu from "./pages/menu";
+import PreJogo from "./pages/preJogo";
+import Reciclagem from "./pages/raciclagem";
+import Jogo from "./pages/jogo";
 
 function App() {
   return (
@@ -9,9 +11,11 @@ function App() {
       {/* <Home />; */}
       {/* <Menu/> */}
       {/* <Reciclagem/> */}
-      <ApresentacaoJogo/>
+      {/* <ApresentacaoJogo/> */}
+      {/* <PreJogo/> */}
+      <Jogo />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
