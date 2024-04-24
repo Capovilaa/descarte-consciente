@@ -7,7 +7,15 @@ import lixoAzul from "../assets/lixeiras/azul.png";
 import lixoAmarelo from "../assets/lixeiras/amarela.png";
 import relogio from "../assets/clock.png";
 
+import { useNavigate, useParams } from "react-router-dom";
+
 function Jogo() {
+  const navigate = useNavigate();
+  const { userName } = useParams();
+
+  function sair() {
+    navigate("/menu");
+  }
   return (
     <>
       <div className="w-full h-screen flex flex-col">
@@ -23,7 +31,7 @@ function Jogo() {
               <div className="w-full h-[20%] flex flex-row items-start justify-center">
                 {/* div para score */}
                 <div className="w-1/2 h-full flex flex-col justify-start pt-4 pl-4">
-                  <h2 className="text-white font-bold text-2xl">USER</h2>
+                  <h2 className="text-white font-bold text-2xl">{userName}</h2>
                   <h2 className="text-white font-semibold text-xl">
                     SCORE 140
                   </h2>
@@ -35,7 +43,7 @@ function Jogo() {
                   <div className="w-full h-1/2 flex flex-row justify-end items-end">
                     <img src={relogio} className="w-10 h-10" />
                     <h2 className="text-white font-bold text-2xl pl-3">0:45</h2>
-                  </div>                  
+                  </div>
                   <h1 className="font-extrabold text-white">||</h1>
                 </div>
               </div>
@@ -69,7 +77,12 @@ function Jogo() {
                 </div>
                 {/* div para botão voltar */}
                 <div className="w-full h-[25%] flex items-end justify-start">
-                  <h1 className="text-xl text-white font-semibold">Sair</h1>
+                  <h1
+                    className="text-xl text-white font-semibold"
+                    onClick={() => sair()}
+                  >
+                    Sair
+                  </h1>
                 </div>
               </div>
             </div>

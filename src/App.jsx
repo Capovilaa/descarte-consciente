@@ -1,19 +1,20 @@
-import ApresentacaoJogo from "./pages/apresentacaoJogo";
 import Home from "./pages/home";
 import Menu from "./pages/menu";
-import PreJogo from "./pages/preJogo";
 import Reciclagem from "./pages/raciclagem";
+import PreJogo from "./pages/preJogo";
 import Jogo from "./pages/jogo";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
     <>
-      {/* <Home />; */}
-      {/* <Menu/> */}
-      {/* <Reciclagem/> */}
-      {/* <ApresentacaoJogo/> */}
-      {/* <PreJogo/> */}
-      <Jogo />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/reciclagem" element={<Reciclagem />} />
+        <Route path="/prejogo" element={<PreJogo />} />
+        <Route path="/jogo/:userName" element={<Jogo />} />
+      </Routes>
     </>
   );
 }

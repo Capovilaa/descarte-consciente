@@ -1,5 +1,6 @@
 import React from "react";
 import Cabecalho from "../components/cabecalho";
+import { useNavigate } from "react-router-dom";
 
 // imagens
 import duvida from "../assets/duvidaPoint.png";
@@ -10,6 +11,19 @@ import zap from "../assets/zapPoint.png";
 import BotaoMenu from "../components/botaoMenu";
 
 function Menu() {
+  const navigate = useNavigate();
+
+  function irHome() {
+    navigate("/");
+  }
+
+  function irReciclagem() {
+    navigate("/reciclagem");
+  }
+
+  function irPrejogo() {
+    navigate("/prejogo");
+  }
   return (
     <>
       <div className="w-full h-screen flex flex-col">
@@ -40,7 +54,12 @@ function Menu() {
                 </div>
                 {/* linha 2 */}
                 <div className="w-full h-1/3 flex flex-row justify-evenly items-end">
-                  <BotaoMenu icone={reciclagem} textoBotao={"Reciclagem"} />
+                  {/* aqui mudar a tela de reciclagem */}
+                  <BotaoMenu
+                    icone={reciclagem}
+                    textoBotao={"Reciclagem"}
+                    funcao={irPrejogo}
+                  />
                   <BotaoMenu icone={zap} textoBotao={"Bate papo"} />
                 </div>
                 {/* linha 3 */}
@@ -52,7 +71,12 @@ function Menu() {
 
               {/* div para rodape */}
               <div className="w-full h-[10%] flex justify-star items-center">
-                <h1 className="text-xl text-[#334333] font-semibold">Voltar</h1>
+                <h1
+                  className="text-xl text-[#334333] font-semibold"
+                  onClick={() => irHome()}
+                >
+                  Voltar
+                </h1>
               </div>
             </div>
           </div>

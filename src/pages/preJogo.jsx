@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Cabecalho from "../components/cabecalho";
 import lixoGame from "../assets/lixoGame.png";
 import InputVerde from "../components/inputVerde";
 import BotaoPrincipal from "../components/botaoPrincipal";
+import { useNavigate } from "react-router-dom";
 
 function PreJogo() {
+  const navigate = useNavigate();
+  const [nome, setNome] = useState("");
+
+  function irJogo() {
+    navigate(`/jogo/${nome}/`);
+  }
+
+  function irMenu() {
+    navigate("/menu");
+  }
   return (
     <>
       <div className="w-full h-screen flex flex-col">
@@ -35,16 +46,25 @@ function PreJogo() {
                   <img src={lixoGame} className="w-44 h-44" />
                 </div>
 
-                {/* div para botão e input */}
+                {/* div para botão e input @dev MUDAR AQUI PARA NÃO DEIXAR PASSAR O NOME PELA ROTA*/}
                 <div className="w-full h-[60%] flex flex-col items-center justify-evenly">
-                  <InputVerde propsPlaceholder={"Seu nome"} />
-                  <BotaoPrincipal textoBotao="Jogar" />
+                  <InputVerde
+                    propsPlaceholder={"Seu nome"}
+                    set={setNome}
+                    value={nome}
+                  />
+                  <BotaoPrincipal textoBotao="Jogar" funcao={irJogo} />
                 </div>
               </div>
 
               {/* div para rodape */}
               <div className="w-full h-[10%] flex justify-star items-center">
-                <h1 className="text-xl text-[#334333] font-semibold">Voltar</h1>
+                <h1
+                  className="text-xl text-[#334333] font-semibold"
+                  onClick={() => irMenu()}
+                >
+                  Voltar
+                </h1>
               </div>
             </div>
           </div>
