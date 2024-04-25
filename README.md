@@ -8,8 +8,13 @@ O grupo é inteiramente composto por alunos do curso de Tecnologia em Análise e
 
 ## Capturas de tela
 
+Parte da página incial onde apresentamos sobre o SmartDesc.
 ![Página inicial](/src/assets/capturas/img1.jpg)
+
+Tela onde será possível visualizar os locais de descarte correto na região do usuário.
 ![Localização](/src/assets/capturas/img2.jpg)
+
+Jogo para fixação do conteúdo apresentado.
 ![Jogo](/src/assets/capturas/img3.jpg)
 
 ## Instalação
