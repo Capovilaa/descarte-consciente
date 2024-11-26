@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "nome": "Papel",
+    "imagem": "papel.png",
+    "cor_lixo": "azul"
+  },
+  {
+    "id": 2,
+    "nome": "Garrafa de vidro",
+    "imagem": "garrafa.png",
+    "cor_lixo": "verde"
+  },
+  {
+    "id": 3,
+    "nome": "Casca de banana",
+    "imagem": "banana.png",
+    "cor_lixo": "marrom"
+  },
+  {
+    "id": 4,
+    "nome": "Embalagem de salgadinho",
+    "imagem": "salgadinho.png",
+    "cor_lixo": "vermelho"
+  },
+  {
+    "id": 5,
+    "nome": "Lata de refrigerante",
+    "imagem": "lata_refri.png",
+    "cor_lixo": "amarelo"
+  },
+  {
+    "id": 6,
+    "nome": "Papelão",
+    "imagem": "papelao.png",
+    "cor_lixo": "azul"
+  },
+  {
+    "id": 7,
+    "nome": "Garrafa pet",
+    "imagem": "garrafa_pet.png",
+    "cor_lixo": "vermelho"
+  },
+  {
+    "id": 8,
+    "nome": "Restos de alimento",
+    "imagem": "restos_alimentares.png",
+    "cor_lixo": "marrom"
+  },
+  {
+    "id": 9,
+    "nome": "Lata",
+    "imagem": "lata.png",
+    "cor_lixo": "amarelo"
+  }
+]

@@ -4,6 +4,7 @@ import Reciclagem from "./pages/raciclagem";
 import PreJogo from "./pages/preJogo";
 import Jogo from "./pages/jogo";
 import { Route, Routes } from "react-router-dom";
+import PontosColeta from "./pages/pontos-coleta";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/reciclagem" element={<Reciclagem />} />
         <Route path="/prejogo" element={<PreJogo />} />
         <Route path="/jogo/:userName" element={<Jogo />} />
+        <Route path="/pontos-coleta" element={<PontosColeta />} />
       </Routes>
     </>
   );

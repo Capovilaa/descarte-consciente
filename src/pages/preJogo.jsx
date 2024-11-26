@@ -10,7 +10,11 @@ function PreJogo() {
   const [nome, setNome] = useState("");
 
   function irJogo() {
-    navigate(`/jogo/${nome}/`);
+    if (nome.length > 0) {
+      navigate(`/jogo/${nome}/`);
+    } else {
+      console.log("Insira seu nome para continuar")
+    }
   }
 
   function irMenu() {
@@ -33,9 +37,9 @@ function PreJogo() {
                   JOGO DE COLETA
                 </h1>
                 <h2 className="text-[#334333] font-semibold text-lg">
-                  Resíduos aparecerão na sua tela, tente <b>descartá-lo</b>
+                  Resíduos aparecerão na sua tela, tente <b>descartá-lo </b>
                   corretamente, quanto mais rápido fizer isso,
-                  <b>mais pontos</b> você ganhará!
+                  <b> mais pontos</b> você ganhará!
                 </h2>
               </div>
 

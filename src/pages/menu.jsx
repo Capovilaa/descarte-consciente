@@ -13,17 +13,10 @@ import BotaoMenu from "../components/botaoMenu";
 function Menu() {
   const navigate = useNavigate();
 
-  function irHome() {
-    navigate("/");
+  function navegar(pagina) {
+    navigate(pagina);
   }
 
-  function irReciclagem() {
-    navigate("/reciclagem");
-  }
-
-  function irPrejogo() {
-    navigate("/prejogo");
-  }
   return (
     <>
       <div className="w-full h-screen flex flex-col">
@@ -49,7 +42,11 @@ function Menu() {
               <div className="w-full h-[75%]">
                 {/* linha 1 */}
                 <div className="w-full h-1/3 flex flex-row justify-evenly items-end">
-                  <BotaoMenu icone={mapa} textoBotao={"Ecopontos"} />
+                  <BotaoMenu
+                    icone={mapa}
+                    textoBotao={"Ecopontos"}
+                    funcao={() => navegar("/pontos-coleta")}
+                  />
                   <BotaoMenu icone={duvida} textoBotao={"Dúvidas"} />
                 </div>
                 {/* linha 2 */}
@@ -58,7 +55,7 @@ function Menu() {
                   <BotaoMenu
                     icone={reciclagem}
                     textoBotao={"Reciclagem"}
-                    funcao={irPrejogo}
+                    funcao={() => navegar("/preJogo")}
                   />
                   <BotaoMenu icone={zap} textoBotao={"Bate papo"} />
                 </div>
@@ -73,7 +70,7 @@ function Menu() {
               <div className="w-full h-[10%] flex justify-star items-center">
                 <h1
                   className="text-xl text-[#334333] font-semibold"
-                  onClick={() => irHome()}
+                  onClick={() => navegar("/")}
                 >
                   Voltar
                 </h1>
