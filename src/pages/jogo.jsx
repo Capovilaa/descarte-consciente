@@ -8,6 +8,7 @@ import lixoAmarelo from "../assets/lixeiras/amarela.png";
 import relogio from "../assets/clock.png";
 import residuos from "../../residuos.json";
 import bgJogo from "../assets/bgJogo.png";
+import axios from "axios";
 
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -17,7 +18,7 @@ function Jogo() {
   const [score, setScore] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [isPlaying, setIsPlaying] = useState(true);
-  const [timer, setTimer] = useState(45);
+  const [timer, setTimer] = useState(10);
   const [startTime, setStartTime] = useState(null);
   const [currentItem, setCurrentItem] = useState(getRandomItem());
 
@@ -61,23 +62,22 @@ function Jogo() {
     setStartTime(Date.now());
   }
 
-  function finalizarJogo() {
-    // fetch("http://localhost:3000/score", {
-    //   method: "POST",
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify({
-    //     name: userName,
-    //     score: score,
-    //     date: new Date(),
-    //   }),
-    // })
-    //   .then((response) => response.json())
-    //   .then((data) => console.log("Score enviado com sucesso", data))
-    //   .catch((err) => console.error("Erro ao enviar score", err));
+  const finalizarJogo = async () => {
+    try {
+      const response = await axios.post("http://localhost:3000/score", {
+        name: userName,
+        score: score,
+        date: new Date(),
+      });
+
+      console.log("Score enviado com sucesso", response.data);
+    } catch (err) {
+      console.error("Erro ao enviar score", err);
+    }
 
     console.log("jogo finalizado");
     sair();
-  }
+  };
 
   useEffect(() => {
     setStartTime(Date.now());

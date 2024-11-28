@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Cabecalho from "../components/cabecalho";
 import lixoGame from "../assets/lixoGame.png";
 import InputVerde from "../components/inputVerde";
 import BotaoPrincipal from "../components/botaoPrincipal";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function PreJogo() {
   const navigate = useNavigate();
   const [nome, setNome] = useState("");
   const [open, setOpen] = useState(false);
+  const [scores, setScores] = useState([]);
 
   function irJogo() {
     if (nome.length > 0) {
@@ -21,6 +23,24 @@ function PreJogo() {
   function voltar() {
     navigate("/reciclagem");
   }
+
+  const fetchScores = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/score");
+
+      const sortedScores = response.data.sort((a, b) => b.score - a.score);
+      setScores(sortedScores);
+    } catch (error) {
+      console.error("Erro ao buscar scores", error);
+    }
+  };
+
+  useEffect(() => {
+    if (open) {
+      fetchScores();
+    }
+  }, [open]);
+
   return (
     <>
       <div className="w-full h-screen flex flex-col">
@@ -48,12 +68,10 @@ function PreJogo() {
               <div className="w-full h-[60%] flex flex-col items-center">
                 {!open ? (
                   <>
-                    {/* div para imagem do lixo */}
                     <div className="w-full h-[40%] flex items-center justify-center">
                       <img src={lixoGame} className="w-44 h-44" />
                     </div>
 
-                    {/* div para botão e input @dev MUDAR AQUI PARA NÃO DEIXAR PASSAR O NOME PELA ROTA*/}
                     <div className="w-full h-[60%] flex flex-col items-center justify-evenly">
                       <InputVerde
                         propsPlaceholder={"Seu nome"}
@@ -65,7 +83,41 @@ function PreJogo() {
                   </>
                 ) : (
                   <>
-                    <div className="w-11/12 h-full bg-red-400"></div>
+                    {/* Ranking Section */}
+                    <div className="w-11/12 h-full overflow-auto p-4">
+                      <h2 className="text-black text-2xl font-bold mb-4">
+                        Ranking
+                      </h2>
+                      <ul className="space-y-4">
+                        {scores.length > 0 ? (
+                          scores.map((score, index) => (
+                            <li
+                              key={score.id}
+                              className="bg-white p-4 rounded-lg shadow-lg"
+                            >
+                              <div className="flex justify-between items-center">
+                                <span className="text-xl font-bold text-blue-500">
+                                  {index + 1}°
+                                </span>
+                                <strong className="text-xl">
+                                  {score.name}
+                                </strong>
+                                <span className="text-lg text-[#334333] font-bold">
+                                  {score.score} pontos
+                                </span>
+                              </div>
+                              <p className="text-sm text-gray-500">
+                                {new Date(score.date).toLocaleString()}
+                              </p>
+                            </li>
+                          ))
+                        ) : (
+                          <li className="text-black">
+                            Nenhum score encontrado.
+                          </li>
+                        )}
+                      </ul>
+                    </div>
                   </>
                 )}
               </div>
