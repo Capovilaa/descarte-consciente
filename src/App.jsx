@@ -5,6 +5,9 @@ import PreJogo from "./pages/preJogo";
 import Jogo from "./pages/jogo";
 import { Route, Routes } from "react-router-dom";
 import PontosColeta from "./pages/pontos-coleta";
+import Duvidas from "./pages/duvidas";
+import Denuncia from "./pages/denuncia";
+import BatePapo from "./pages/bate-papo";
 
 function App() {
   return (
@@ -16,6 +19,9 @@ function App() {
         <Route path="/prejogo" element={<PreJogo />} />
         <Route path="/jogo/:userName" element={<Jogo />} />
         <Route path="/pontos-coleta" element={<PontosColeta />} />
+        <Route path="/duvidas" element={<Duvidas />} />
+        <Route path="/denuncia" element={<Denuncia />} />
+        <Route path="/batePapo" element={<BatePapo />} />
       </Routes>
     </>
   );

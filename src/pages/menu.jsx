@@ -47,7 +47,11 @@ function Menu() {
                     textoBotao={"Ecopontos"}
                     funcao={() => navegar("/pontos-coleta")}
                   />
-                  <BotaoMenu icone={duvida} textoBotao={"Dúvidas"} />
+                  <BotaoMenu
+                    icone={duvida}
+                    textoBotao={"Dúvidas"}
+                    funcao={() => navegar("/duvidas")}
+                  />
                 </div>
                 {/* linha 2 */}
                 <div className="w-full h-1/3 flex flex-row justify-evenly items-end">
@@ -55,13 +59,21 @@ function Menu() {
                   <BotaoMenu
                     icone={reciclagem}
                     textoBotao={"Reciclagem"}
-                    funcao={() => navegar("/preJogo")}
+                    funcao={() => navegar("/reciclagem")}
                   />
-                  <BotaoMenu icone={zap} textoBotao={"Bate papo"} />
+                  <BotaoMenu
+                    icone={zap}
+                    textoBotao={"Bate papo"}
+                    funcao={() => navegar("/batePapo")}
+                  />
                 </div>
                 {/* linha 3 */}
                 <div className="w-full h-1/3 flex flex-row justify-evenly items-end">
-                  <BotaoMenu icone={excla} textoBotao={"Denúncias"} />
+                  <BotaoMenu
+                    icone={excla}
+                    textoBotao={"Denúncias"}
+                    funcao={() => navegar("/denuncia")}
+                  />
                   <div className="w-[110px] h-[110px]"></div>
                 </div>
               </div>
