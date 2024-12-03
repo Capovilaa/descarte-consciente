@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Cabecalho from "../components/cabecalho";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
+import insta from "../assets/insta.png";
 
 function BatePapo() {
   const navigate = useNavigate();
@@ -9,6 +10,10 @@ function BatePapo() {
   function navegar(pagina) {
     navigate(pagina);
   }
+
+  const redirect = () => {
+    window.location.href = "https://www.instagram.com/smartdesc/";
+  };
 
   return (
     <>
@@ -29,7 +34,9 @@ function BatePapo() {
                 </h2>
               </div>
 
-              <div className="w-full h-[65%]"></div>
+              <div className="w-full h-[65%] flex items-center justify-center">
+                <img src={insta} onClick={redirect} className="w-24 h-24"></img>
+              </div>
 
               <div className="w-full h-[10%] flex justify-start items-center">
                 <h1
