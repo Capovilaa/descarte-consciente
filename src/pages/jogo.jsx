@@ -64,7 +64,7 @@ function Jogo() {
 
   const finalizarJogo = async () => {
     try {
-      const response = await axios.post("http://localhost:3000/score", {
+      const response = await axios.post("https://usual-butterfly-smart-desc-3dd5546a.koyeb.app/score", {
         name: userName,
         score: score,
         date: new Date(),

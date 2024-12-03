@@ -26,7 +26,9 @@ function PreJogo() {
 
   const fetchScores = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/score");
+      const response = await axios.get(
+        "https://usual-butterfly-smart-desc-3dd5546a.koyeb.app/score"
+      );
 
       const sortedScores = response.data.sort((a, b) => b.score - a.score);
       setScores(sortedScores);
