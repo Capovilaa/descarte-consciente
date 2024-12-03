@@ -3,6 +3,7 @@ import Cabecalho from "../components/cabecalho";
 import { useNavigate } from "react-router-dom";
 import "leaflet/dist/leaflet.css";
 import insta from "../assets/insta.png";
+import zap from "../assets/zap.png";
 
 function BatePapo() {
   const navigate = useNavigate();
@@ -11,8 +12,8 @@ function BatePapo() {
     navigate(pagina);
   }
 
-  const redirect = () => {
-    window.location.href = "https://www.instagram.com/smartdesc/";
+  const redirect = (link) => {
+    window.location.href = link;
   };
 
   return (
@@ -34,8 +35,22 @@ function BatePapo() {
                 </h2>
               </div>
 
-              <div className="w-full h-[65%] flex items-center justify-center">
-                <img src={insta} onClick={redirect} className="w-24 h-24"></img>
+              <div className="w-full h-[65%] flex flex-row items-center justify-evenly">
+                <img
+                  src={insta}
+                  onClick={() =>
+                    redirect("https://www.instagram.com/smartdesc/")
+                  }
+                  className="w-24 h-24"
+                ></img>
+
+                <img
+                  src={zap}
+                  onClick={() =>
+                    redirect("https://chat.whatsapp.com/EkQJq8v7afVLMsLP1WKA2k")
+                  }
+                  className="w-24 h-24"
+                ></img>
               </div>
 
               <div className="w-full h-[10%] flex justify-start items-center">
